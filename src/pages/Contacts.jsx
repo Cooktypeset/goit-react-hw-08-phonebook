@@ -4,7 +4,7 @@ import { Section } from '../components/section/Section';
 import { Loader } from '../components/Loader/Loader';
 
 import ContactForm from '../components/ContactForm/ContactForm';
-import Contacts from '../components/contacts/Contacts';
+import Contacts from '../components/ContactList/ContactList';
 import Filter from '../components/filter/Filter';
 import { useSelector } from 'react-redux';
 import { selectLoading, selectError } from '../Redux/selectors';
