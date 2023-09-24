@@ -1,46 +1,34 @@
-import { lazy, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefreshing } from 'Redux/selectors';
-import { getCurrentUser } from 'Redux/operations';
-
-import { Main } from 'pages/Main';
-import { PublicRoute } from './PublicRoute';
-import { PrivateRoute } from './PrivateRoute';
-
+import { ContactForm } from "./ContactForm/ContactForm"
+import { Filter } from "./Filter/Filter";
+import { Contacts } from "./ContactList/ContactList";
 import { Loader } from './Loader/Loader';
+import { useSelector } from 'react-redux';
+import { selectLoading, selectError } from '../Redux/selectors';
+import Notiflix from 'notiflix';
+import { Container } from './container/Container';
+import { Section } from './section/Section';
 
-const WelcomePage = lazy(() => import('../pages/WelcomePage'));
-const Login = lazy(() => import('../pages/Login'));
-const Register = lazy(() => import('../pages/Register'));
-const ContactsPage = lazy(() => import('../pages/Contacts'));
-const ErrorPage = lazy(() => import('../pages/ErrorPage'));
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const isRefreshing = useSelector(selectIsRefreshing);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(getCurrentUser());
-  }, [dispatch]);
+  if (isError) Notiflix.Notify.warning(`${isError.message}`);
+  return (
+    <Container>
+      {isLoading && <Loader />}
 
-  return isRefreshing ? (
-    <Loader />
-  ) : (
-    <Routes>
-      <Route path="/" element={<Main />}>
-        <Route index element={<WelcomePage />} />
-        <Route path="login" element={<PublicRoute component={<Login />} />} />
-        <Route
-          path="register"
-          element={<PublicRoute component={<Register />} />}
-        />
-        <Route
-          path="contacts"
-          element={<PrivateRoute component={<ContactsPage />} />}
-        />
-        <Route path="*" element={<ErrorPage />} />
-      </Route>
-    </Routes>
+      <Section>
+        <h1>Phonebook</h1>
+        <ContactForm />
+        {!isError && (
+          <>
+            <h2>Contacts</h2>
+            <Filter />
+            <Contacts />
+          </>
+        )}
+      </Section>
+    </Container>
   );
 };
