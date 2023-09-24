@@ -3,7 +3,7 @@ import { setFilter } from '../../Redux/FilterSlice/FilterSlice';
 import css from "./Filter.module.css";
 
 
-export const Filter = () => {
+ const Filter = () => {
     const dispatch = useDispatch();
     const handleChange = event => {
         dispatch(setFilter(event.currentTarget.value));
@@ -18,3 +18,4 @@ export const Filter = () => {
     </div>
     )
 }
+export default Filter;
