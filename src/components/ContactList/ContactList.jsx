@@ -19,11 +19,11 @@ import css from './ContactList.module.css';
   return (
     <div>
       <ul>
-        {contacts?.map(({ id, name, phone }) => {
+        {contacts?.map(({ id, name, number}) => {
           return (
             <li key={id} className={css.list__item}>
               <p>
-                {name} {phone}
+                {name} {number}
               </p>
               <button
                 className={css.list__button}

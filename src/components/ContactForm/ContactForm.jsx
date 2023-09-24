@@ -34,7 +34,7 @@ export const ContactForm = () => {
     }
     dispatch(addContacts({
       name: newContact.name,
-      phone: newContact.number
+     number: newContact.number
     }));
     event.currentTarget.reset();
   };
