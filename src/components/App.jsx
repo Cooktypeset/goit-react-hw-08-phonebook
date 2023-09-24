@@ -3,11 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from 'Redux/selectors';
 import { getCurrentUser } from 'Redux/operations';
-
 import { Main } from 'pages/Main';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
-
 import { Loader } from './Loader/Loader';
 
 const WelcomePage = lazy(() => import('../pages/WelcomePage'));
