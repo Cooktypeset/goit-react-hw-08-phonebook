@@ -5,7 +5,7 @@ import { Loader } from '../components/Loader/Loader';
 
 import ContactForm from '../components/ContactForm/ContactForm';
 import Contacts from '../components/ContactList/ContactList';
-import Filter from '../components/filter/Filter';
+import Filter from '../components/Filter/Filter';
 import { useSelector } from 'react-redux';
 import { selectLoading, selectError } from '../Redux/selectors';
 
