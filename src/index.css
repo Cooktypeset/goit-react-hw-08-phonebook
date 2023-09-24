@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
 }
 
 code {
@@ -18,8 +17,4 @@ code {
 ul {
   padding: 0;
   list-style: none;
-}
-a {
-  color: currentColor;
-  text-decoration: none;
 }

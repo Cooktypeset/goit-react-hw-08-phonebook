@@ -11,4 +11,4 @@ export const PublicRoute = component => {
 
 PublicRoute.propTypes = {
   component: PropTypes.node,
-}; 
+};
