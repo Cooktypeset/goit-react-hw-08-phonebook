@@ -7,7 +7,7 @@ import { fetchContacts, deleteContacts } from 'Redux/operations';
 
 import css from './ContactList.module.css';
 
-export const Contacts = () => {
+ const Contacts = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(selectVisibleContacts);
@@ -39,4 +39,4 @@ export const Contacts = () => {
   );
 };
 
-
+export default Contacts;
