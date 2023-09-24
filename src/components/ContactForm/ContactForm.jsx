@@ -76,4 +76,4 @@ export const ContactForm = () => {
         </button>
       </form>
     );
-  }
+}
