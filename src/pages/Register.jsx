@@ -37,27 +37,27 @@ const Register = () => {
             className={css.useagecard__input}
             name="email"
             type="text"
-            pattern="^[a-zA-Zа-яА-Я\s]+$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+            // pattern="^[a-zA-Zа-яА-Я\s]+$"
+            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            // required
           />
           <label className={css.useagecard__lable}>Name</label>
           <input
             className={css.useagecard__input}
             name="name"
             type="text"
-            pattern="^[a-zA-Zа-яА-Я\s]+$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required
+            // pattern="^[a-zA-Zа-яА-Я\s]+$"
+            // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            // required
           />
           <label className={css.useagecard__lable}>Password</label>
           <input
             className={css.useagecard__input}
             name="password"
             type="tel"
-            pattern="\+?[0-9\s\-\(\)]+"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-            required
+            // pattern="\+?[0-9\s\-\(\)]+"
+            // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            // required
           />
           <button type="submit" className={css.useagecard__button}>
             Register
