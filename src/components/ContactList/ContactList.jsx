@@ -2,13 +2,17 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 
-import { selectVisibleContacts } from '../../Redux/selectors';
+import { selectVisibleContacts, selectLoading } from '../../Redux/selectors';
 import { fetchContacts, deleteContacts } from 'Redux/operations';
+
+import { Loader } from '../../components/Loader/Loader';
+import loaderCss from '../../components/Loader/Loader.module.css';
 
 import css from './ContactList.module.css';
 
  const Contacts = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectLoading);
 
   const contacts = useSelector(selectVisibleContacts);
 
@@ -18,7 +22,9 @@ import css from './ContactList.module.css';
 
   return (
     <div>
+
       <ul>
+        
         {contacts?.map(({ id, name, number}) => {
           return (
             <li key={id} className={css.list__item}>
@@ -35,6 +41,9 @@ import css from './ContactList.module.css';
           );
         })}
       </ul>
+                        {isLoading && <Loader
+              className={loaderCss.loaderContact}
+            />}
     </div>
   );
 };
